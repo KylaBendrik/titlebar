@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <header id="titlebar">
+    <div id="drag-region">
+      <div id="window-title">
+        <img src="/images/icon.png" height="24" />
+        <span>Window Title</span>
+      </div>
+    </div>
+    <div id="window-controls">
+      <div class="button" id="min-button" onclick="pushMinimizeWindow()">
+        <img class="icon" srcset="/images/icons/min-w-10.png 1x, icons/min-w-12.png 1.25x,
+            icons/min-w-15.png 1.5x, icons/min-w-15.png 1.75x, icons/min-w-20.png
+            2x, icons/min-w-20.png 2.25x, icons/min-w-24.png 2.5x,
+            icons/min-w-30.png 3x, icons/min-w-30.png 3.5x" draggable="false" />
+      </div>
+
+      <div class="button" id="close-button" onclick="pushCloseWindow()">
+        <img class="icon" srcset="/images/icons/close-w-10.png 1x, icons/close-w-12.png 1.25x,
+            icons/close-w-15.png 1.5x, icons/close-w-15.png 1.75x,
+            icons/close-w-20.png 2x, icons/close-w-20.png 2.25x,
+            icons/close-w-24.png 2.5x, icons/close-w-30.png 3x, icons/close-w-30.png
+            3.5x" draggable="false" />
+      </div>
+    </div>
+  </header>
+  <div id="main">
+    <h1>Creating a custom titlebar is easy!</h1>
+    <p>We just need to fix a few things.</p>
+    <p>Check out https://github.com/binaryfunt/electron-seamless-titlebar-tutorial
+      for more information about creating the CSS and JS for this titlebar. I just want to show you
+      how to make it work with NodeIntegration set to false.
+    </p>
+  </div>
+</body>
+</html>
+<script>
+  function pushCloseWindow() {
+    MainAPI.closeWindow();
+  }
+
+  function pushMinimizeWindow() {
+    MainAPI.minimizeWindow();
+  }
+</script>
